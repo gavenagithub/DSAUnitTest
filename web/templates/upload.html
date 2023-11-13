@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Python File</title>
+</head>
+<body>
+    <h2>Upload Python File</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <label for="test_script">Choose a test script:</label>
+        <select name="test_script">
+            <option value="test_grader.py">Test Simple Quiz Grader</option>
+            <option value="test_bank_account.py">Test Simple Bank Account Manager</option>
+            <option value="test_seat_reservation.py">Test Event Seat Allocator</option>
+            
+        </select>
+        <input type="submit" value="Upload">
+    </form>
+    {% if test_output %}
+    <h3>Filename: {{filename}}</h3>
+    {% endif %}
+    {% if test_output %}
+    <h3>Test Results:</h3>
+    <pre>{{ test_output }}</pre>
+    {% endif %}
+
+
+</body>
+</html>
